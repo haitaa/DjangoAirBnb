@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Categories from "./components/Categories/Categories";
 
 export default function Home() {
-  return (
-    <main className="">
-      <h2 className="text-airbnb">Air Bnb</h2>
-    </main>
-  );
+    return (
+        <main className="max-w-[1500px] mx-auto px-6">
+            <Categories />
+        </main>
+    );
 }

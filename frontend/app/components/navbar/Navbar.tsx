@@ -15,7 +15,7 @@ function Navbar() {
                         <Image
                             src="/airbnb.png"
                             alt="Air Bnb"
-                            width={75}
+                            width={55}
                             height={38}
                         />
                     </Link>
