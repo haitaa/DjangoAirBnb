@@ -1,0 +1,22 @@
+services:
+  web:
+    build: ./airbnb_backend
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes: 
+      - ./airbnb_backend/ :/backend/airbnb_backend
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+  db:
+    image: postgres:14
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=rootpassword
+      - POSTGRES_DB=airbnb
+volumes:
+  postgres_data:
