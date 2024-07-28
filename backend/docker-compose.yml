@@ -3,7 +3,7 @@ services:
     build: ./airbnb_backend
     command: python3 manage.py runserver 0.0.0.0:8000
     volumes: 
-      - ./airbnb_backend/ :/backend/airbnb_backend
+      - ./airbnb_backend/:/usr/src/airbnb_backend/
     ports:
       - 8000:8000
     env_file:
