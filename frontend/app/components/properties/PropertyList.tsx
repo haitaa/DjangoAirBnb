@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 import apiService from "@/app/services/apiService";
 import PropertyListItem from "./PropertyListItem";
-import { url } from "inspector";
 
 export type PropertyType = {
     id: string;
