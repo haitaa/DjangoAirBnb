@@ -1,9 +1,22 @@
 import React from "react";
 
-export default function ReservationSideBar() {
+export type Property = {
+    id: string;
+    price_per_night: number;
+};
+
+interface ReservationSideBarProps {
+    property: Property;
+}
+
+const ReservationSideBar: React.FC<ReservationSideBarProps> = ({
+    property,
+}) => {
     return (
         <aside className="mt-6 p-6 col-span-2 rounded-xl border border-gray-300 shadow-xl">
-            <h2 className="mb-5 text-2xl">$200 per night</h2>
+            <h2 className="mb-5 text-2xl">
+                ${property.price_per_night} per night
+            </h2>
 
             <div className="mb-6 p-3 border border-gray-400 rounded-xl">
                 <label className="mb-2 block font-bold text-xs">Guests</label>
@@ -36,4 +49,6 @@ export default function ReservationSideBar() {
             </div>
         </aside>
     );
-}
+};
+
+export default ReservationSideBar;
