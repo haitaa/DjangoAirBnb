@@ -10,7 +10,6 @@ import CustomButton from "../forms/CustomButton";
 import { handleLogin } from "@/app/lib/actions";
 import apiService from "@/app/services/apiService";
 
-
 function LoginModal() {
     const router = useRouter();
     const loginModal = useLoginModal();
@@ -24,7 +23,7 @@ function LoginModal() {
             password: password,
         };
 
-        const response = await apiService.post(
+        const response = await apiService.postWithoutToken(
             "/api/auth/login/",
             JSON.stringify(formData)
         );
