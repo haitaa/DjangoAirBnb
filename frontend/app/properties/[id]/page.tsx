@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import Link from "next/link";
+
 import ReservationSideBar from "@/app/components/properties/ReservationSideBar";
 import apiService from "@/app/services/apiService";
 import { getUserId } from "@/app/lib/actions";
@@ -40,7 +42,10 @@ const PropertyDetailPage = async ({ params }: { params: { id: string } }) => {
 
                         <hr />
 
-                        <div className="py-6 flex items-center space-x-4">
+                        <Link
+                            href={`/landlords/${property.landlord.id}`}
+                            className="py-6 flex items-center space-x-4"
+                        >
                             <Image
                                 src={property.landlord.avatar_url}
                                 alt="The user name"
@@ -52,7 +57,7 @@ const PropertyDetailPage = async ({ params }: { params: { id: string } }) => {
                                 <strong>{property.landlord.name}</strong> is
                                 your host
                             </p>
-                        </div>
+                        </Link>
 
                         <hr />
 
