@@ -13,7 +13,10 @@ async function MyReservationsPage() {
             <div className="space-y-4">
                 {reservations.map((reservation: any) => {
                     return (
-                        <div className="p-5 grid grid-cols-1 md:grid-cols-4 gap-4 shadow-md border border-gray-300 rounded-xl">
+                        <div
+                            key={reservation.id}
+                            className="p-5 grid grid-cols-1 md:grid-cols-4 gap-4 shadow-md border border-gray-300 rounded-xl"
+                        >
                             <div className="col-span-1">
                                 <div className="relative overflow-hidden aspect-square rounded-xl">
                                     <Image
