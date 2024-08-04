@@ -2,11 +2,13 @@ import Image from "next/image";
 
 import ReservationSideBar from "@/app/components/properties/ReservationSideBar";
 import apiService from "@/app/services/apiService";
+import { getUserId } from "@/app/lib/actions";
 
 const PropertyDetailPage = async ({ params }: { params: { id: string } }) => {
     try {
         const url = `/api/properties/${params.id}`;
         const property = await apiService.get(url);
+        const userId = await getUserId();
 
         if (!property) {
             return (
@@ -58,6 +60,7 @@ const PropertyDetailPage = async ({ params }: { params: { id: string } }) => {
                     </div>
 
                     <ReservationSideBar
+                        userId={userId}
                         property={property}
                     ></ReservationSideBar>
                 </div>
