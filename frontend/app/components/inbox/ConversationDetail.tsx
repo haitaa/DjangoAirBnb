@@ -85,7 +85,7 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
 
     const scrollToBottom = () => {
         if (messagesDiv.current) {
-            messagesDiv.current.scrollTop = messagesDiv.current.scrollHeigth;
+            messagesDiv.current.scrollTop = messagesDiv.current.scrollHeight;
         }
     };
 
