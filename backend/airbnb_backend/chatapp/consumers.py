@@ -44,6 +44,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
             }
         )
 
+        await self.save_message(conversation_id,body, sent_to_id)
+
     # Sending messages
     async def chat_message(self, event):
         body = event['body']
@@ -53,3 +55,9 @@ class ChatConsumer(AsyncWebsocketConsumer):
             'body': body,
             'name': name,
         }))
+
+    @sync_to_async
+    def save_message(self, conversation_id, body, sent_to_id):
+        user = self.scope['user']
+
+        ConversationMessage.objects.create(conversation_id=conversation_id, body=body, sent_to_id=sent_to_id, created_by=user)
