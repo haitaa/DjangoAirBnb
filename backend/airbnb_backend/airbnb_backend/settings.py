@@ -24,6 +24,12 @@ SITE_ID = 1
 
 WEBSITE_URL = "http://localhost:8000"
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    }
+}
+
 ACCOUNT_EMAIL_VERIFICATION = 'optional'  # or 'mandatory' or 'none'
 
 SIMPLE_JWT = {
@@ -67,6 +73,7 @@ REST_AUTH = {
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,6 +130,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'airbnb_backend.wsgi.application'
+ASGI_APPLICATION = 'airbnb_backend.asgi.application'
 
 
 # Database
