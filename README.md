@@ -1,7 +1,7 @@
 # DjangoAirBnb
 
 ## Overview
-DjangoAirBnb is a web application inspired by Airbnb, built using Django and TypeScript. It provides a platform for users to list and book accommodations, featuring a real-time chat system.
+DjangoAirBnb is a web application inspired by Airbnb, built using Django and TypeScript. It provides a platform for users to list and book accommodations, featuring a real-time chat featured system.
 
 ## Features
 - **User Authentication & Authorization**
